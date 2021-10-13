@@ -9,243 +9,159 @@
     outline: none !important;
 }
 
+//body, html, main {
+//    height: 100%;
+//}
 
+body {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: $font-color;
+}
 
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 50px 0;
+}
 
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
+h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+}
 
-//body {
-//    font-family: 'Gilroy';
-//    font-weight: normal;
-//    font-style: normal;
-//    font-size: 14px;
-//    line-height: 16px;
-//    color: #000;
-//    margin: 0;
-//    padding: 0;
-//
-//    @media (min-width: $md) {
-//        font-size: 18px;
-//        line-height: 26px;
-//    }
-//}
-//
-//ul, li {
-//    list-style: none;
-//}
-//
-////- Controllers
-//.input {
-//    width: 269px;
-//    height: 56px;
-//    background: $font-lite;
-//    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
-//    border-radius: 999px;
-//    text-align: center;
-//    font-size: 18px;
-//    line-height: 22px;
-//    display: inline-block;
-//    overflow: hidden;
-//    text-overflow: ellipsis;
-//    white-space: nowrap;
-//    padding: 0 1em;
-//
-//    &:focus {
-//    }
-//
-//    @media (min-width: $md) {
-//        margin: 0 15px;
-//    }
-//
-//    @media (min-width: $xl) {
-//        width: 254px;
-//    }
-//
-//    &.input_button {
-//        background: linear-gradient(75.93deg, #FAD264 44.82%, #FCE558 70.67%);
-//        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
-//        cursor: pointer;
-//        transition: box-shadow .3s linear;
-//
-//        &:hover {
-//            box-shadow: 0 5px 5px rgba(0, 0, 0, 0);
-//        }
-//    }
-//}
-//
-//input:-webkit-autofill,
-//input:-webkit-autofill:hover,
-//input:-webkit-autofill:focus,
-//input:-webkit-autofill:active {
-//
-//}
-//
-//input {
-//    outline: 0;
-//    overflow: hidden;
-//    text-overflow: ellipsis;
-//    white-space: nowrap;
-//}
-//
-//input[type="number"]::-webkit-outer-spin-button,
-//input[type="number"]::-webkit-inner-spin-button {
-//    -webkit-appearance: none; // Yeah, yeah everybody write about it
-//}
-//
-//input[type='number'],
-//input[type="number"]:hover,
-//input[type="number"]:focus {
-//    appearance: none;
-//    -moz-appearance: textfield;
-//}
-//input {
-//    &::-webkit-input-placeholder {
-//        color: #000;
-//        opacity: 1;
-//        transition: opacity 0.2s ease;
-//    }
-//
-//    &::-moz-placeholder {
-//        color: #000;
-//        opacity: 1;
-//        transition: opacity 0.2s ease;
-//    }
-//
-//    &:-moz-placeholder {
-//        color: #000;
-//        opacity: 1;
-//        transition: opacity 0.2s ease;
-//    }
-//
-//    &:-ms-input-placeholder {
-//        color: #000;
-//        opacity: 1;
-//        transition: opacity 0.2s ease;
-//    }
-//
-//    &:focus::-webkit-input-placeholder {
-//        color: #000;
-//        opacity: 0;
-//        transition: opacity 0.2s ease;
-//    }
-//
-//    &:focus::-moz-placeholder {
-//        color: #000;
-//        opacity: 0;
-//        transition: opacity 0.2s ease;
-//    }
-//
-//    &:focus:-moz-placeholder {
-//        color: #000;
-//        opacity: 0;
-//        transition: opacity 0.2s ease;
-//    }
-//
-//    &:focus:-ms-input-placeholder {
-//        color: #000;
-//        opacity: 0;
-//        transition: opacity 0.2s ease;
-//    }
-//}
-//
-///* удаление иконки очистки поля в IE */
-//input[type="text"]::-ms-clear {
-//    display: none;
-//}
-//
-///* удаление иконки отображения пароля в IE */
-//input[type="password"]::-ms-reveal {
-//    display: none;
-//}
-//
-//.section {
-//    padding: 60px 0;
-//
-//    @media (min-width: $md) {
-//        padding: 90px 0;
-//    }
-//}
-//
-//.section__title {
-//    position: relative;
-//    font-weight: 700;
-//    font-size: 30px;
-//    line-height: 37px;
-//    text-transform: uppercase;
-//    text-align: center;
-//    padding: 0 0 26px;
-//    margin: 0 0 27px;
-//
-//    @media (max-width: $xsm) {
-//        font-size: 28px;
-//        line-height: 34px;
-//    }
-//
-//    @media (min-width: $md) {
-//        font-size: 36px;
-//        line-height: 45px;
-//        padding-bottom: 37px;
-//    }
-//
-//    @media (min-width: $xl) {
-//        margin-top: 34px;
-//        padding-bottom: 39px;
-//        margin-bottom: 23px;
-//    }
-//
-//    &::after {
-//        content: "";
-//        display: block;
-//        position: absolute;
-//        width: 70px;
-//        height: 2px;
-//        bottom: 0;
-//        left: 50%;
-//        transform: translateX(-50%);
-//        background-color: #E130E3;
-//
-//        @media (min-width: $xl) {
-//            width: 70px;
-//        }
-//    }
-//}
-//
-//.section__subtitle {
-//    font-size: 22px;
-//    line-height: 1.3;
-//    text-align: center;
-//    margin-top: 29px;
-//    margin-bottom: 67px;
-//
-//    @media (min-width: $lg) and (max-width: $xl - 1) {
-//        font-size: 28px;
-//    }
-//
-//    @media (min-width: $xl) {
-//        font-size: 36px;
-//        line-height: 43px;
-//    }
-//}
-//
-//.link_button {
-//    display: flex;
-//    justify-content: center;
-//    align-items: center;
-//    width: 100%;
-//    text-decoration: none;
-//    background: linear-gradient(75.93deg, #FAD264 44.82%, #FCE558 70.67%);
-//    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
-//    height: 56px;
-//    border-radius: 999px;
-//    text-align: center;
-//    font-size: 18px;
-//    line-height: 22px;
-//    padding: 0 1em;
-//    cursor: pointer;
-//    transition: box-shadow .3s linear;
-//    color: $font-color;
-//
-//    &:hover {
-//        box-shadow: 0 5px 5px rgba(0, 0, 0, 0);
-//    }
-//}
+input {
+    outline: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &::-webkit-input-placeholder {
+        color: $font-color;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    &::-moz-placeholder {
+        color: $font-color;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    &:-moz-placeholder {
+        color: $font-color;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    &:-ms-input-placeholder {
+        color: $font-color;
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
+
+    &:focus::-webkit-input-placeholder {
+        color: $font-color;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    &:focus::-moz-placeholder {
+        color: $font-color;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    &:focus:-moz-placeholder {
+        color: $font-color;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    &:focus:-ms-input-placeholder {
+        color: $font-color;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+}
+
+// Удаление иконки очистки поля в IE
+input[type="text"]::-ms-clear {
+    display: none;
+}
+
+// Удаление иконки отображения пароля в IE
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+.accent {
+    color: $color-accent !important;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background: linear-gradient(180deg, #A1DEFF 0%, $color-border 100%);
+    border: 1px solid #AEE3FF;
+    box-sizing: border-box;
+    box-shadow: 0 3px 0 #0071AD, 0 19px 20px -11px rgba(99, 186, 232, 0.7);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: $color-background;
+    transition: all .3s linear;
+    margin: 0 auto;
+    transition: all .3s linear;
+
+    @media (min-width: $sm) {
+        margin: initial;
+    }
+
+    &:hover {
+        box-shadow: 0 2px 0 #0071AD, 0 10px 10px -11px rgba(99, 186, 232, 0.7);
+    }
+
+    &.inactive {
+        background: linear-gradient(180deg, #d3d3d3 0%, #ababab 100%);
+        border: 1px solid #dadada;
+        box-shadow: 0 3px 0 #aaaaaa, 0 19px 20px -11px #dadada;
+        cursor: not-allowed;
+    }
+
+    &_next {
+        padding-left: 49px;
+        padding-right: 48px;
+
+        &::after {
+            content: "";
+            display: inline-block;
+            position: relative;
+            width: 25px;
+            height: 16px;
+            margin-left: 10px;
+            background: url("/img/icon-arr-to-right.svg") center no-repeat;
+        }
+    }
+
+    &_send {
+        width: 100%;
+        max-width: 288px;
+        text-align: center;
+        font-size: 16px;
+    }
+}

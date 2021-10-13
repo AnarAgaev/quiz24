@@ -1,0 +1,28 @@
+.cards#cards
+    h2.cards__title Какой тип грунта на вашем участке?
+
+    h3.cards__subtitle От типа грунта зависит технология монтажа септика
+
+    ul.cards__list
+        li
+            span.cards__pic(style="background-image: url(/img/type-1.jpg)")
+                span.cards__check
+            span.cards__desc Песок
+        li
+            span.cards__pic(style="background-image: url(/img/type-2.jpg)")
+                span.cards__check
+            span.cards__desc Суглинок
+        li
+            span.cards__pic(style="background-image: url(/img/type-3.jpg)")
+                span.cards__check
+            span.cards__desc Торф
+        li
+            span.cards__pic(style="background-image: url(/img/type-4.jpg)")
+                span.cards__check
+            span.cards__desc Глина
+
+    label.cards__question
+        span.cards__check
+        input.cards__control#customType(type="text" placeholder="Введите Ваш вариант ответа...")
+
+    button.btn.btn_next.inactive#btnShowNextQuestion Дальше

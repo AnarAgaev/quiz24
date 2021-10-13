@@ -1,0 +1,147 @@
+@import "../../../../scss/variables";
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 90%;
+    transition: all .5s linear;
+    padding-bottom: 70px;
+
+    &.invisible {
+        transform: translateY(25px);
+        opacity: 0;
+    }
+
+    &.hidden {
+        display: none;
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 125%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    &__subtitle {
+        width: 100%;
+        max-width: 540px;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 125%;
+        text-align: center;
+        margin-top: 42px;
+        margin-bottom: 43px;
+        transition: all .3s linear;
+
+        &.invisible {
+            transform: translateY(25px);
+            opacity: 0;
+        }
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    form {
+        width: 100%;
+        max-width: 288px;
+        transition: all .3s linear;
+
+        &.invisible {
+            transform: translateY(25px);
+            opacity: 0;
+        }
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    &__control {
+        width: 100%;
+        max-width: 288px;
+        height: 50px;
+        background: $color-background;
+        border: 1px solid $color-placeholder;
+        box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 125%;
+        text-align: center;
+        padding: 15px 25px 15px;
+        margin-bottom: 18px;
+
+        &::-webkit-input-placeholder { color: $color-placeholder; }
+        &::-moz-placeholder { color: $color-placeholder; }
+        &:-moz-placeholder { color: $color-placeholder; }
+        &:-ms-input-placeholder { color: $color-placeholder; }
+        &:focus::-webkit-input-placeholder { color: $color-placeholder; }
+        &:focus::-moz-placeholder { color: $color-placeholder; }
+        &:focus:-moz-placeholder { color: $color-placeholder; }
+        &:focus:-ms-input-placeholder { color: $color-placeholder; }
+    }
+}
+
+.progress {
+    position: relative;
+    width: 100px;
+    height: 100px;
+
+    .value {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        top: 10px;
+        left: 10px;
+        text-align: center;
+        border-radius: 50%;
+        font-weight: bold;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: $color-background url("/img/icon-check.svg") center no-repeat;
+            transition: all .1s linear;
+            transform: scale(0.8);
+            opacity: 0;
+        }
+
+        &.checked::after {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .bar {
+        fill: none;
+        stroke-width: 10px;
+        stroke: #7BBB4C;
+        stroke-linecap: round;
+        stroke-dasharray: 282.6;
+        stroke-dashoffset: 282.6;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+
+        &.animation {
+            animation: progress-bar 3s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+        }
+    }
+}
+
+@keyframes progress-bar {
+    from { stroke-dashoffset: 282.6; }
+    to { stroke-dashoffset: 0; }
+}

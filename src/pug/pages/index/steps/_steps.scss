@@ -1,0 +1,91 @@
+@import "../../../../scss/variables";
+
+.steps {
+    width: 90%;
+    max-width: 319px;
+    position: relative;
+    margin: 0 auto 52px;
+    transition: all .5s linear;
+
+    &.invisible {
+        transform: translateY(25px);
+        opacity: 0;
+    }
+
+    &.hidden {
+        display: none;
+    }
+
+    &__bar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 40px;
+        border: 2px solid $color-border;
+        box-sizing: border-box;
+        border-radius: 33px;
+        margin-bottom: 25px;
+        padding: 0 10px;
+
+        @media (min-width: $sm) {
+            padding: 0 20px;
+            justify-content: space-between;
+        }
+
+        span {
+            position: relative;
+            width: 126px;
+            height: 20px;
+            background: #EDEDED;
+            border-radius: 999px;
+            overflow: hidden;
+
+            &::before, &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                border-radius: 999px;
+                height: 100%;
+            }
+
+            &::before {
+                width: 0;
+                z-index: 1;
+                background-color: $color-border;
+                transition: width .5s ease-in-out;
+            }
+
+            &::after {
+                width: 100%;
+                z-index: 2;
+                background: linear-gradient(267.16deg, $color-border 7.68%, #9EDDFF 53.18%, $color-border 90.4%);
+                transform: translateX(-100%);
+            }
+
+            &.active {
+                &::after { animation: steps-bar 3s linear .4s infinite normal forwards; }
+            }
+
+            &.passed::before { width: 100%; }
+        }
+    }
+
+    &__question {
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 26px;
+        color: $font-color;
+
+        #stepValue {
+            color: $color-border;
+        }
+
+    }
+}
+
+@keyframes steps-bar {
+    0% { transform: translateX(-100%); }
+    33% { transform: translateX(100%); }
+    100% { transform: translateX(100%); }
+}

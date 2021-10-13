@@ -1,0 +1,80 @@
+@import "../../../../scss/variables";
+
+.banner {
+    width: 90%;
+    max-width: 1092px;
+    height: auto;
+    background: $color-background;
+    box-shadow: 0 7px 33px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 10px;
+    transform: translateY(0);
+    transition: all .3s linear;
+    cursor: pointer;
+
+    &.animation {
+        animation: banner 1.5s linear 0s infinite normal forwards;
+    }
+
+    &.invisible {
+        transform: translateY(25px);
+        opacity: 0;
+    }
+
+    &.hidden {
+        display: none;
+    }
+
+    @media (min-width: $md) {
+        padding: 55px 92px 60px;
+    }
+
+    &__body {
+        position: relative;
+        width: 100%;
+        background: $color-border;
+        border-radius: 10px;
+        padding: 50px 10px 20px;
+        text-align: center;
+
+        @media (min-width: $md) {
+            padding: 18px 74px 18px 122px;
+            text-align: left;
+        }
+    }
+
+    &__pic {
+        display: block;
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media (min-width: $md) {
+            top: calc(50% + 5px);
+            left: 25px;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__desc {
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 31px;
+        color: $color-background;
+        margin: 0;
+        padding: 0;
+
+        @media (min-width: $md) {
+            font-size: 26px;
+        }
+    }
+}
+
+@keyframes banner {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-10px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+}

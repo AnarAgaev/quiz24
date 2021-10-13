@@ -1,0 +1,48 @@
+@import "../../../../scss/variables";
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    &__dialog {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        max-width: 400px;
+        position: relative;
+        margin: 50px auto;
+        text-align: center;
+        padding: 30px;
+        font-weight: bold;
+        font-size: 24px;
+        transition: all .5s linear;
+        background-color: $color-border;
+        border-radius: 10px;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    &.invisible .modal__dialog {
+        transform: translateY(-25px);
+        opacity: 0;
+    }
+
+    &.hidden .modal__dialog {
+        display: none;
+    }
+
+    &__txt {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    &__close {
+        display: block;
+        padding: 0 30px;
+    }
+}

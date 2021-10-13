@@ -1,0 +1,17 @@
+.form.invisible.hidden#form
+    .form__title
+        | Расчет стоимости
+        | !{" "}
+        span.accent сформирован
+
+    .progress
+        .value#progressVal 0%
+        svg(viewBox="0 0 100 100" width="100" height="100" xmlns="http://www.w3.org/2000/svg")
+            circle.bar(cx="50" cy="50" r="45")
+
+    .form__subtitle.invisible.hidden#formCaption Он откроется на этой странице сразу после ввода вашего номера телефона
+
+    form.invisible.hidden#formControls(action="/" method="GET")
+        label.form__controll-wrap
+            input.form__control#phone(type="text" placeholder="Введите ваш номер телефона")
+        button.btn.btn_send.inactive#sendForm(type="submit") Получить расчет и мини-курс
